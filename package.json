@@ -1,0 +1,21 @@
+{
+  "name": "jsoff",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Yakov V. Ling",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "pack:osx": "electron-packager . JSOff --out=dist/osx --platform=darwin --arch=x64 --icon=assets/JSOff.icns",
+    "pack:win64": "electron-packager . JSOff --out=dist/win --platform=win32 --arch=x64 --version=0.36.2 app-version=1.0 --icon=assets/JSOff.ico"
+  },
+  "files": [
+    "*"
+  ],
+  "dependencies": {
+    "codemirror": "^5.58.2",
+    "electron": "^10.1.5",
+    "json-parse-better-errors": "^1.0.2",
+    "open": "^7.3.0"
+  }
+}

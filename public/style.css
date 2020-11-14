@@ -1,0 +1,240 @@
+:root{
+    --backgroundColor: rgb(29, 32, 35);
+    --foreColor: rgb(200, 200, 200);
+    --titleColor: rgb(255, 255, 255);
+
+    --textareaColor: rgb(23, 26, 28);
+    --textareaUtilsColor: rgb(20, 21, 24);
+    --textareaUtilsHoverColor: rgb(45, 46, 52);
+
+    --borderRadius: 10px;
+    --borderColor: #333;
+
+    --jsonObjectColor: rgb(30, 35, 39);
+}
+
+@font-face {
+    font-family: 'JSOff';
+    src: url("fonts/9202.otf") format("opentype");
+    font-weight: normal;
+}
+
+
+@font-face {
+    font-family: 'JSOff';
+    src: url("fonts/9206.otf") format("opentype");
+    font-weight: bold;
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--backgroundColor);
+    color: var(--foreColor);
+    font-family: JSOff;
+    box-sizing: content-box;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.app-bar{
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    color: var(--titleColor);
+    font-weight: bold;
+
+}
+
+.app-wrapper{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.app-content{
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+}
+
+.app-footer{
+    padding: 15px;
+    text-align: center;
+    font-size: 11px;
+}
+
+.app-area{
+    flex: 1;
+    width: 50%;
+    padding: 15px;
+    flex-direction: column;
+    display: flex;
+}
+
+input,
+textarea,
+.CodeMirror-cursor,
+[contenteditable] {
+    caret-color: red;
+    -webkit-text-fill-color: red;
+    color: red;
+}
+
+textarea, .CodeMirror{
+    width: 100%;
+    height: 100%;
+    resize: none;
+    padding: 10px;
+    color: whitesmoke;
+
+    background-color: var(--textareaColor);
+    outline: none !important;
+    border-color: #333;
+    border-top-left-radius: var(--borderRadius);
+    border-top-right-radius: var(--borderRadius);
+    max-width: 100%;
+}
+
+.textarea-utils{
+    display: flex;
+    background-color: var(--textareaUtilsColor);
+    border-bottom-left-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+    border: 1px solid #333333;
+    width: 100%;
+    padding: 10px;
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.textarea-utils div{
+    text-transform: uppercase;
+    justify-self: center;
+    align-self: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: -2px;
+}
+
+.textarea-utils:hover{
+    background-color: var(--textareaUtilsHoverColor);
+}
+
+.json-object{
+    border: 1px solid #333333;
+    border-radius: var(--borderRadius);
+    background-color: var(--jsonObjectColor);
+}
+.json-section{
+    padding: 15px;
+
+    border: 1px solid #333333;
+    border-radius: var(--borderRadius);
+    background-color: var(--textareaColor);
+    display: flex;
+    flex-direction: column;
+}
+
+.json-section, .json-object{
+    margin-bottom: 8px;
+}
+
+.json-section .title, .json-section .value{
+    color: var(--titleColor);
+}
+
+.json-section .value{
+    opacity: 0.8;
+}
+
+.title, .name{
+    word-break: break-word;
+}
+
+#results{
+    overflow-y: scroll;
+}
+
+.key, .value{
+    opacity: 0.3;
+}
+
+.ot{
+    font-size: 11px;
+    float: right;
+}
+
+.item{
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.item:hover{
+    background-color: var(--textareaUtilsHoverColor);
+}
+
+.json-object .hdn *:not(:first-child):not(.ot){
+    display: none;
+}
+
+.json-object .hdn *:first-child{
+    margin-bottom:  0;
+
+}
+
+.json-object .hdn .title:after{
+    content: ' [ ... ]';
+    font-size: 11px;
+    display: block;
+    opacity: 0.5;
+
+}
+
+a{
+    text-decoration: none;
+    color: var(--titleColor);
+}
+
+.app-error{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 130px;
+    background-color: rgba(200, 0, 0, 0.4);
+    padding: 15px;
+    backdrop-filter: blur(8px);
+}
+
+.app-close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: all 0.4s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.app-close:hover{
+    opacity: 0.5;
+}
+
+.app-move{
+    margin: 0 auto;
+    width: 20px;
+    user-select: none;
+    cursor: grab;
+}
+
+.app-move img{
+    height: 20px;
+    opacity: 0.7;
+}
