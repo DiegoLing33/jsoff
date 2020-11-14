@@ -2,4 +2,6 @@
 
 JSON visual parser
 
-<img src="./assets/screen2.png"  alt="Screen 1"/>
+<img src="https://github.com/DiegoLing33/jsoff/raw/master/assets/screen2.png"  alt="Screen 1"/>
+
+[Download macOS Version 1.0](https://github.com/DiegoLing33/jsoff/releases/tag/main)
