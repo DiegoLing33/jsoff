@@ -17,36 +17,68 @@
 	<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<div class="app-bar">
-	JSOff
-</div>
-<div class="app-wrapper">
-	<div class="app-content" style="margin: 0 15px;">
-		<div class="app-area" id="text">
-<!--			<textarea id="area" placeholder="Input json...">{"name": "Nick", "ages": 20, "rules": {"f": 1, "b": 2}, "rules2": {"f": 1, "b": 2}}</textarea>-->
-			<textarea id="area" placeholder="Input json here..."></textarea>
-			<div id="reformatButton" class="textarea-utils">
-				<div>Reformat</div>
-			</div>
-		</div>
-		<div class="app-area" id="results" style="display: none">
-			<div class="json-section">
-				<div class="title">Object</div>
-				<div class="name">name</div>
-			</div>
-		</div>
+<div class="app-container">
+	<div class="app-bar">
+		JSOff
 	</div>
-</div>
+	<div class="app-modules">
+		<div class="app-modules-item" data-toggle="parsing">Parsing</div>
+		<div class="app-modules-item" data-toggle="typing">Typing</div>
+	</div>
+	<div class="app-wrapper">
+		<div class="app-content" style="margin: 0 15px;">
+			<div class="app-area" id="text">
+				<!--			<textarea id="area" placeholder="Input json...">{"name": "Nick", "ages": 20, "rules": {"f": 1, "b": 2}, "rules2": {"f": 1, "b": 2}}</textarea>-->
+				<textarea id="area" placeholder="Input json here...">
+{
+    "field": "token_created",
+    "value": "1607038244",
+    "id": 2,
+    "name": "Kisya",
+    "data": {
+        "sub": "log",
+        "k": true,
+        "items": [
+            {
+                "name": "l"
+            },
+            {
+                "name": "5"
+            }
+        ]
+    }
+}			</textarea>
+				<div id="reformatButton" class="textarea-utils">
+					<div>Reformat & RUN</div>
+				</div>
+			</div>
+			<div class="app-area" id="results" style="display: none">
+				<div class="json-section">
+					<div class="title">Object</div>
+					<div class="name">name</div>
+				</div>
+			</div>
+			<div class="app-area" id="typings" style="display: none">
+				<textarea id="area-typing" placeholder="class A { }"></textarea>
 
-<div class="app-error" style="height: 130px; display: none">
-	<div class="app-close">&times;</div>
-	<div class="app-move" draggable="true">
-		<img draggable="false" src="images/lines.svg" />
+				<div id="add-entities-button" class="textarea-utils">
+					<div>Add entities</div>
+				</div>
+			</div>
+			</div>
+		</div>
 	</div>
-	<div class="content"></div>
-</div>
-<div class="app-footer">
-	Powered By Yakov V. Ling <a href="#" id="me">@ling.black</a>
+
+	<div class="app-error" style="height: 130px; display: none">
+		<div class="app-close">&times;</div>
+		<div class="app-move" draggable="true">
+			<img draggable="false" src="images/lines.svg"/>
+		</div>
+		<div class="content"></div>
+	</div>
+	<div class="app-footer">
+		Powered By Yakov V. Ling <a href="#" id="me">@ling.black</a> • Version: 1.12
+	</div>
 </div>
 <script type="module" src="index.js"></script>
 </body>

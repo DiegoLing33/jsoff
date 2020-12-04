@@ -18,6 +18,7 @@
   "dependencies": {
     "codemirror": "^5.58.2",
     "json-parse-better-errors": "^1.0.2",
+    "md5": "^2.3.0",
     "open": "^7.3.0"
   },
   "devDependencies": {

@@ -1,4 +1,4 @@
-:root{
+:root {
     --backgroundColor: rgb(29, 32, 35);
     --foreColor: rgb(200, 200, 200);
     --titleColor: rgb(255, 255, 255);
@@ -26,7 +26,7 @@
     font-weight: bold;
 }
 
-body, html{
+body, html {
     margin: 0;
     padding: 0;
 
@@ -36,11 +36,18 @@ body, html{
     box-sizing: content-box;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
-.app-bar{
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 100%;
+}
+
+.app-bar {
     -webkit-user-select: none;
     -webkit-app-region: drag;
 
@@ -49,28 +56,66 @@ body, html{
     text-align: center;
     color: var(--titleColor);
     font-weight: bold;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.app-modules {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 30px;
+}
+
+.app-modules-item {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.4s;
+    flex-grow: 1;
+    text-align: center;
+    padding: 10px 0;
+    padding-bottom: 11px;
+    background-color: transparent;
+    border-bottom: 1px solid #00ffff;
+}
+
+.app-modules-item:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.app-modules .--active {
+    opacity: 1;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #00ffff;
+}
+
+
+.app-modules-item {
 
 }
 
-.app-wrapper{
+.app-wrapper {
     display: flex;
     flex-direction: column;
     max-width: 100%;
+    height: 100%;
+    max-height: 100%;
 }
 
-.app-content{
+.app-content {
     flex: 1;
     display: flex;
     align-items: stretch;
 }
 
-.app-footer{
+.app-footer {
     padding: 15px;
     text-align: center;
     font-size: 11px;
 }
 
-.app-area{
+.app-area {
     flex: 1;
     width: 50%;
     padding: 15px;
@@ -87,7 +132,7 @@ textarea,
     color: red;
 }
 
-textarea, .CodeMirror{
+textarea, .CodeMirror {
     width: 100%;
     height: 100%;
     resize: none;
@@ -102,7 +147,7 @@ textarea, .CodeMirror{
     max-width: 100%;
 }
 
-.textarea-utils{
+.textarea-utils {
     display: flex;
     background-color: var(--textareaUtilsColor);
     border-bottom-left-radius: var(--borderRadius);
@@ -115,7 +160,7 @@ textarea, .CodeMirror{
     transition: all 0.4s;
 }
 
-.textarea-utils div{
+.textarea-utils div {
     text-transform: uppercase;
     justify-self: center;
     align-self: center;
@@ -124,16 +169,17 @@ textarea, .CodeMirror{
     margin-top: -2px;
 }
 
-.textarea-utils:hover{
+.textarea-utils:hover {
     background-color: var(--textareaUtilsHoverColor);
 }
 
-.json-object{
+.json-object {
     border: 1px solid #333333;
     border-radius: var(--borderRadius);
     background-color: var(--jsonObjectColor);
 }
-.json-section{
+
+.json-section {
     padding: 15px;
 
     border: 1px solid #333333;
@@ -143,54 +189,54 @@ textarea, .CodeMirror{
     flex-direction: column;
 }
 
-.json-section, .json-object{
+.json-section, .json-object {
     margin-bottom: 8px;
 }
 
-.json-section .title, .json-section .value{
+.json-section .title, .json-section .value {
     color: var(--titleColor);
 }
 
-.json-section .value{
+.json-section .value {
     opacity: 0.8;
 }
 
-.title, .name{
+.title, .name {
     word-break: break-word;
 }
 
-#results{
+#results {
     overflow-y: scroll;
 }
 
-.key, .value{
+.key, .value {
     opacity: 0.3;
 }
 
-.ot{
+.ot {
     font-size: 11px;
     float: right;
 }
 
-.item{
+.item {
     cursor: pointer;
     transition: all 0.4s;
 }
 
-.item:hover{
+.item:hover {
     background-color: var(--textareaUtilsHoverColor);
 }
 
-.json-object .hdn *:not(:first-child):not(.ot){
+.json-object .hdn *:not(:first-child):not(.ot) {
     display: none;
 }
 
-.json-object .hdn *:first-child{
-    margin-bottom:  0;
+.json-object .hdn *:first-child {
+    margin-bottom: 0;
 
 }
 
-.json-object .hdn .title:after{
+.json-object .hdn .title:after {
     content: ' [ ... ]';
     font-size: 11px;
     display: block;
@@ -198,12 +244,12 @@ textarea, .CodeMirror{
 
 }
 
-a{
+a {
     text-decoration: none;
     color: var(--titleColor);
 }
 
-.app-error{
+.app-error {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -214,7 +260,7 @@ a{
     backdrop-filter: blur(8px);
 }
 
-.app-close{
+.app-close {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -223,18 +269,18 @@ a{
     user-select: none;
 }
 
-.app-close:hover{
+.app-close:hover {
     opacity: 0.5;
 }
 
-.app-move{
+.app-move {
     margin: 0 auto;
     width: 20px;
     user-select: none;
     cursor: grab;
 }
 
-.app-move img{
+.app-move img {
     height: 20px;
     opacity: 0.7;
 }
