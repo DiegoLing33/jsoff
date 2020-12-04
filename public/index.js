@@ -13,7 +13,7 @@ const md5 = require("md5");
 useExtensions();
 
 // Defaults
-let currentMode = 'typing';
+let currentMode = 'parsing';
 let detectedTypes = {};
 let lastModifiedCode = '';
 
